@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>website all mode</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>HALLO SELAMAT DATANG</h1>
+      <p id="info" class="info"></p>
+      <nav>
+        <a href="">HOME</a>
+        <a onclick="modeDark()" id="mode">DARK MODE</a>
+        <a onclick="modeBlue()" id="modeBlue">BLUE MODE</a>
+      </nav>
+    </div>
+
+    <script>
+      let body = document.body;
+      let mode = document.getElementById("mode");
+      let modeBiru = document.getElementById("modeBlue");
+      let info = document.getElementById("info");
+
+      let lightMode = "light mode";
+      let darkMode = "dark mode";
+      let blueMode = "blue mode";
+
+      function modeDark() {
+        body.classList.remove("blue");
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          mode.textContent = "DARK MODE";
+          info.textContent = "ini adalah mode dark";
+        } else {
+          info.textContent = "";
+        }
+      }
+      function modeBlue() {
+        body.classList.remove("dark");
+        body.classList.toggle("blue");
+
+        if (body.classList.contains("blue")) {
+          modeBiru.textContent = "BLUE MODE";
+          info.textContent = "ini adalah mode blue";
+        } else {
+          modeBiru.textContent = blueMode;
+          info.textContent = "";
+        }
+      }
+    </script>
+  </body>
+</html>
